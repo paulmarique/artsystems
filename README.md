@@ -1,0 +1,1 @@
+This is the evolving results of my personnal explorations around generative composition and orchestred chaos. Through a grid framework, multiple coded art systems are combined randomly. Each seconds brings a unique composition, offering an evolving visual spectacle that fuses serendipity with strategic design decisions.
