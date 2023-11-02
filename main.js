@@ -5,12 +5,13 @@ Chaque generateArtwork choisis une palette au hazard
 fichier json avec liste des ArtSystems (avec poid)
 */
 
-import { artSystemLine } from './artSystems/line.js';
-import { artSystemStack } from './artSystems/stack.js';
-import { artSystemDottedSquare } from './artSystems/dottedSquare.js';
-import { artSystemGradientSquare } from './artSystems/gradientSquare.js';
-import { artSystemCirclePattern } from './artSystems/circlePattern.js';
-
+import { artSystemCirclePattern } from './artSystems/circlePattern.js'
+import { artSystemLine } from './artSystems/line.js'
+import {artSystemStack } from './artSystems/stack.js'
+import { artSystemDottedSquare } from './artSystems/dottedSquare.js'
+import { artSystemSymetricLines } from './artSystems/symetricLines.js';
+import { artSystemPerlinCircle } from './artSystems/perlinCircle.js';
+import { artSystemGradientSquare } from './artSystems/gradientSquare.js'
 
 
 
@@ -45,8 +46,8 @@ function generateArtwork() {
   * to apply in this instance (a number between 3 and 6). The canvas is cleared to ensure a fresh start. Then, for the determined 
   * number of art systems, it selects one randomly and executes it. After applying all the art systems, it overlays the grid on top.
   */
-    const artSystems = [artSystemLine, artSystemStack, artSystemDottedSquare, artSystemGradientSquare, artSystemCirclePattern];
-    const artSystemsCount = Math.floor(Math.random() * 4) + 3;
+    const artSystems = [artSystemCirclePattern, artSystemDottedSquare, artSystemLine, artSystemStack, artSystemGradientSquare];
+    const artSystemsCount = Math.floor(Math.random() * 5) + 3;
   
     ctx.clearRect(0, 0, canvas.width, canvas.height);
   

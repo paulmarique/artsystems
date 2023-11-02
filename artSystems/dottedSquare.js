@@ -15,7 +15,12 @@ export function artSystemDottedSquare(ctx, GRID_SIZE, canvas, COLOR_PALETTE) {
   let startY = Math.floor(Math.random() * (canvas.height / GRID_SIZE - squareSize)) * GRID_SIZE;
 
   // Randomly select a background color from the palette
-  const bgColor = COLOR_PALETTE[Math.floor(Math.random() * COLOR_PALETTE.length)];
+  let bgColor = COLOR_PALETTE[Math.floor(Math.random() * COLOR_PALETTE.length)];
+
+  // Check if the background color is black, choose another color
+  if (bgColor === 'black') {
+    bgColor = COLOR_PALETTE[Math.floor(Math.random() * COLOR_PALETTE.length)];
+  }
 
   // Draw the square with the background color
   ctx.fillStyle = bgColor;
