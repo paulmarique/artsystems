@@ -1,6 +1,8 @@
 import { artSystemLine } from './artSystems/line.js';
 import { artSystemStack } from './artSystems/stack.js';
 import { artSystemDottedSquare } from './artSystems/dottedSquare.js';
+import { artSystemGradientSquare } from './artSystems/gradientSquare.js';
+import { artSystemCirclePattern } from './artSystems/circlePattern.js';
 
 // CONSTANTS
 const canvas = document.getElementById("artCanvas");
@@ -21,7 +23,7 @@ function drawGrid() {
     for (let y = 0; y <= canvas.height; y += GRID_SIZE) {
       ctx.strokeStyle = `rgba(0, 0, 0, ${GRID_VISIBILITY})`;
       ctx.lineWidth = 1;  // Line width set to 1 pixel
-      ctx.setLineDash([5, 3]);  // Creates a pattern of a 5-pixel line followed by a 3-pixel space
+      ctx.setLineDash([1, 5]);  // Creates a pattern of a 5-pixel line followed by a 3-pixel space
 
       ctx.strokeRect(x, y, GRID_SIZE, GRID_SIZE);
     }
@@ -35,7 +37,7 @@ function generateArtwork() {
   * to apply in this instance (a number between 3 and 6). The canvas is cleared to ensure a fresh start. Then, for the determined 
   * number of art systems, it selects one randomly and executes it. After applying all the art systems, it overlays the grid on top.
   */
-    const artSystems = [artSystemLine, artSystemStack, artSystemDottedSquare];
+    const artSystems = [artSystemLine, artSystemStack, artSystemDottedSquare, artSystemGradientSquare, artSystemCirclePattern];
     const artSystemsCount = Math.floor(Math.random() * 4) + 3;
   
     ctx.clearRect(0, 0, canvas.width, canvas.height);
