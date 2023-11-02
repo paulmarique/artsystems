@@ -13,6 +13,7 @@ import { artSystemCirclePattern } from './artSystems/circlePattern.js';
 
 
 
+
 // CONSTANTS
 const canvas = document.getElementById("artCanvas");
 const ctx = canvas.getContext("2d");
