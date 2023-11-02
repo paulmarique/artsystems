@@ -12,6 +12,8 @@ import { artSystemDottedSquare } from './artSystems/dottedSquare.js'
 import { artSystemSymetricLines } from './artSystems/symetricLines.js';
 import { artSystemPerlinCircle } from './artSystems/perlinCircle.js';
 import { artSystemGradientSquare } from './artSystems/gradientSquare.js'
+import { artSystemShards } from './artSystems/shards.js';
+import { artSystemNoiseCircle } from './artSystems/circleNoise.js';
 
 
 
@@ -39,6 +41,17 @@ function drawGrid() {
   }
 }
 
+function generateUniqueFilename() {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const day = String(now.getDate()).padStart(2, '0');
+  const hour = String(now.getHours()).padStart(2, '0');
+  const minute = String(now.getMinutes()).padStart(2, '0');
+  const second = String(now.getSeconds()).padStart(2, '0');
+  return `output/${year}-${month}-${day}_${hour}-${minute}-${second}.jpg`;
+}
+
 function generateArtwork() {
   /* Purpose: This is the main function responsible for creating the artwork on the canvas.
   * 
@@ -46,8 +59,8 @@ function generateArtwork() {
   * to apply in this instance (a number between 3 and 6). The canvas is cleared to ensure a fresh start. Then, for the determined 
   * number of art systems, it selects one randomly and executes it. After applying all the art systems, it overlays the grid on top.
   */
-    const artSystems = [artSystemCirclePattern, artSystemDottedSquare, artSystemLine, artSystemStack, artSystemGradientSquare];
-    const artSystemsCount = Math.floor(Math.random() * 5) + 3;
+    const artSystems = [artSystemCirclePattern, artSystemDottedSquare, artSystemLine, artSystemStack, artSystemGradientSquare, artSystemShards, artSystemNoiseCircle];
+    const artSystemsCount = Math.floor(Math.random() * 8) + 4;
   
     ctx.clearRect(0, 0, canvas.width, canvas.height);
   
@@ -61,4 +74,4 @@ function generateArtwork() {
 
 // Execution of the main function to generate the artwork upon loading the script.
 generateArtwork();
-setInterval(generateArtwork, 500);
+setInterval(generateArtwork, 800);
