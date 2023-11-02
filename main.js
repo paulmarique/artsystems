@@ -1,15 +1,15 @@
-import { artSystemLine } from './artSystems/line.js';
-import { artSystemStack } from './artSystems/stack.js';
-import { artSystemDottedSquare } from './artSystems/dottedSquare.js';
-import { artSystemGradientSquare } from './artSystems/gradientSquare.js';
-import { artSystemCirclePattern } from './artSystems/circlePattern.js';
-
 /* TODO
 Faire plusieurs color palette
 Chaque generateArtwork choisis une palette au hazard
 
 fichier json avec liste des ArtSystems (avec poid)
 */
+
+import { artSystemLine } from './artSystems/line.js';
+import { artSystemStack } from './artSystems/stack.js';
+import { artSystemDottedSquare } from './artSystems/dottedSquare.js';
+import { artSystemGradientSquare } from './artSystems/gradientSquare.js';
+import { artSystemCirclePattern } from './artSystems/circlePattern.js';
 
 
 

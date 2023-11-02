@@ -1,4 +1,12 @@
 {
+  "artSystems": [
+    {
+      "name": "artSystemLine",
+      "weight": 3,
+      "filePath": "./artSystems/line.js"
+    }
+
+  ],
   "colorPalettes": [
     ["blue", "yellow", "black", "white"],
     ["red", "green", "purple", "orange"]
