@@ -18,7 +18,7 @@ const canvas = document.getElementById("artCanvas");
 const ctx = canvas.getContext("2d");
 const GRID_SIZE = 40; // This is determined by the canvas height divided by the grid cells count.
 const COLOR_PALETTE = ["blue", "yellow", "black", "white"];
-const GRID_VISIBILITY = 0.14;
+const GRID_VISIBILITY = 0.1;
 
 
 function drawGrid() {
@@ -32,8 +32,6 @@ function drawGrid() {
     for (let y = 0; y <= canvas.height; y += GRID_SIZE) {
       ctx.strokeStyle = `rgba(0, 0, 0, ${GRID_VISIBILITY})`;
       ctx.lineWidth = 1;  
-      ctx.setLineDash([0.5, 4]);  
-
       ctx.strokeRect(x, y, GRID_SIZE, GRID_SIZE);
     }
   }
