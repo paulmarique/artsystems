@@ -4,12 +4,21 @@ import { artSystemDottedSquare } from './artSystems/dottedSquare.js';
 import { artSystemGradientSquare } from './artSystems/gradientSquare.js';
 import { artSystemCirclePattern } from './artSystems/circlePattern.js';
 
+/* TODO
+Faire plusieurs color palette
+Chaque generateArtwork choisis une palette au hazard
+
+fichier json avec liste des ArtSystems (avec poid)
+*/
+
+
+
 // CONSTANTS
 const canvas = document.getElementById("artCanvas");
 const ctx = canvas.getContext("2d");
 const GRID_SIZE = 40; // This is determined by the canvas height divided by the grid cells count.
 const COLOR_PALETTE = ["blue", "yellow", "black", "white"];
-const GRID_VISIBILITY = 0.15;
+const GRID_VISIBILITY = 0.14;
 
 
 function drawGrid() {
@@ -22,8 +31,8 @@ function drawGrid() {
   for (let x = 0; x <= canvas.width; x += GRID_SIZE) {
     for (let y = 0; y <= canvas.height; y += GRID_SIZE) {
       ctx.strokeStyle = `rgba(0, 0, 0, ${GRID_VISIBILITY})`;
-      ctx.lineWidth = 1;  // Line width set to 1 pixel
-      ctx.setLineDash([1, 5]);  // Creates a pattern of a 5-pixel line followed by a 3-pixel space
+      ctx.lineWidth = 1;  
+      ctx.setLineDash([0.5, 4]);  
 
       ctx.strokeRect(x, y, GRID_SIZE, GRID_SIZE);
     }
@@ -52,4 +61,4 @@ function generateArtwork() {
 
 // Execution of the main function to generate the artwork upon loading the script.
 generateArtwork();
-setInterval(generateArtwork, 1000);
+setInterval(generateArtwork, 500);

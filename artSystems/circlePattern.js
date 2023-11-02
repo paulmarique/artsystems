@@ -18,7 +18,7 @@ export function artSystemCirclePattern(ctx, GRID_SIZE, canvas, COLOR_PALETTE) {
     const y = centerY + (diameter / 4) * Math.sin(angle);
     ctx.beginPath();
     ctx.arc(x, y, 1, 0, Math.PI * 2);
-    ctx.fill(); */
+    ctx.fill(); 
     
-  }
+  }*/
 }
